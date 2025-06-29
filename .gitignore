@@ -3,3 +3,6 @@
 /out
 /.idea
 /algorithm_exercises.iml
+.DS_Store
+
+algorithm-analysis-exercises.iml

@@ -6,8 +6,8 @@ public class MergeSort {
         int[] arr = {2, 3, 4, 1, 5};
         int[] arr1 = {4, 3, 1, 2};
 
-        mergeSort(arr1);
-        assert arr1 == new int [] {1,2,3,4};
+        mergeSort(arr);
+        assert arr == new int [] {1,2,3,4,5};
         System.out.println("Correct order");
     }
 
@@ -26,14 +26,14 @@ public class MergeSort {
 
         int middlePoint = (leftStart + rightEnd) / 2;
         mergeSort(arr, temp, leftStart, middlePoint); // first recursive call iterates the left half of the array
-        mergeSort(arr, temp, middlePoint + 1, rightEnd); // second recursive call iterates the right half of the array
+        mergeSort(arr, temp, middlePoint + 1, rightEnd);// second recursive call iterates the right half of the array
         mergeHalves(arr, temp, leftStart, rightEnd); // merge the 2 halves of the array
     }
 
     // we will need a temporary array for sort the halves
     private static void mergeHalves(int [] arr, int [] temp, int leftStart, int rightEnd) {
         int leftEnd = (rightEnd + leftStart) / 2; // we calculate again the new middle that will be the end of the left array
-        int rightStart = leftEnd + 1; // the starting point of the left part is the ending of the left part + 1
+        int rightStart = leftEnd + 1; // the starting point of the right part is the ending of the left part + 1
         int size = rightEnd - leftStart + 1; // we calculate the size of the half that will be sorted
 
         //we define pointers to iterate over the half part to sort

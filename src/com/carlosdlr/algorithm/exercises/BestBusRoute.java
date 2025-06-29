@@ -18,7 +18,9 @@ public class BestBusRoute {
         if (S==T) return 0;
         int N = routes.length;
 
+
         List<List<Integer>> graph = new ArrayList<>();
+
         for (int i = 0; i < N; ++i) {
             Arrays.sort(routes[i]);
             graph.add(new ArrayList());
@@ -54,7 +56,7 @@ public class BestBusRoute {
             int node = info.x, depth = info.y;
             if (targets.contains(node)) return depth+1;
             for (Integer nei: graph.get(node)) {
-                if (!seen.contains(nei)) {
+                if (!seen.contains  (nei)) {
                     seen.add(nei);
                     queue.offer(new Point(nei, depth+1));
                 }

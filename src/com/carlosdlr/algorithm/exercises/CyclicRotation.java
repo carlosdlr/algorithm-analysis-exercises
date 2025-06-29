@@ -6,25 +6,16 @@ public class CyclicRotation {
 
     public static void main(String args []) {
         int [] data = {5, 3, 4, 1, 2};
-        System.out.println(Arrays.toString(getRotatedArray(data, 2)));
+        System.out.println(Arrays.toString(solution(data, 2)));
     }
 
-    public static int[] getRotatedArray(int[] data, int timesToRotate) {
-        int [] rotatedArray = new int[data.length];
-        int size = data.length;
-        int j = 0;
-        for(int i = size - timesToRotate; i < size; i++) {
-            rotatedArray[j] = data[i];
-            j++;
+    public static int[] solution(int[] A, int K) {
+        var result = new int[A.length];
+
+        for (int i = 0; i < result.length; i++) {
+            result[(i+ K) % A.length] = A[i];
         }
 
-        for (int k = 0; k < size - timesToRotate; k++) {
-            if(j < size) {
-                rotatedArray[j] = data[k];
-                j++;
-            }
-        }
-
-        return rotatedArray;
+        return result;
     }
 }
